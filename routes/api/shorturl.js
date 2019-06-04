@@ -6,7 +6,7 @@ const {URL} = require('url');
 
 router.post('/new', (req, res) => {
   //Get input from the request body
-  let input = req.body.input;
+  let input = req.body.url;
 
   //Search the database to see if the input url already exists
   short_url.find({original_url: input}, function(err, document) {

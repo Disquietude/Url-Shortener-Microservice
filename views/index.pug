@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title URL Shortener Microservice
+    link(rel="stylesheet", href="styles.css")
+  body
+    h1.title URL Shortener Microservice
+    .container
+      h2.subtitle.subtitle--no-top-margin Description:
+      p.container__text Microservice that takes a POSTed URL and returns a shortened URL.
+      h2.subtitle API Endpoints:
+      h3.subtitle POST /api/shorturl/new
+      p.container__text Submits a URL to be shortened
+      form.form(action="/api/shorturl/new", method="post")
+        input.form__input#url(name="url" type="text" placeholder="Enter URL Here")
+        button.form__button Submit
+      h3.subtitle GET /api/shorturl/:short_url
+      p.container__text Redirects to the original URL that corresponds to the shortened URL
+      p.container__text
+        | Sample Route ("short_url": 1):
+        |
+        a(href="/api/shorturl/1") /api/shorturl/1
